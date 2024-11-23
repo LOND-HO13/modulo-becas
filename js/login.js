@@ -2,13 +2,11 @@ document.addEventListener("DOMContentLoaded", () => {
     // Inicializar usuarios en localStorage si no existen
     if (!localStorage.getItem("users")) {
         const initialUsers = [
-            { username: "admin", password: "admin", role: "admin" },
-            { username: "user1", password: "12345", role: "estudiante" },
-            { username: "monitor1", password: "54321", role: "monitor" }
+            { username: "admin", password: "admin" },
+            { username: "user1", password: "12345" }
         ];
         localStorage.setItem("users", JSON.stringify(initialUsers));
     }
-
 
     // Función para cambiar la contraseña
     function changePassword(username, newPassword) {
@@ -43,6 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
+    // Manejar el inicio de sesión
     const loginForm = document.getElementById("loginForm");
     if (loginForm) {
         loginForm.addEventListener("submit", (e) => {
@@ -51,32 +50,15 @@ document.addEventListener("DOMContentLoaded", () => {
             const username = document.getElementById("username").value;
             const password = document.getElementById("password").value;
             const users = JSON.parse(localStorage.getItem("users"));
-
             const user = users.find(
                 (u) => u.username === username && u.password === password
             );
 
             if (user) {
                 alert("Inicio de sesión exitoso. Bienvenido " + username + "!");
-
-                // Redirigir según el rol del usuario
-                switch (user.role) {
-                    case "admin":
-                        window.location.href = "index_admin.html";
-                        break;
-                    case "estudiante":
-                        window.location.href = "index_estudiante.html";
-                        break;
-                    case "monitor":
-                        window.location.href = "index_monitor.html";
-                        break;
-                    default:
-                        alert("Rol desconocido. No se pudo redirigir.");
-                }
             } else {
                 alert("Usuario o contraseña incorrectos. Inténtalo de nuevo.");
             }
         });
     }
-
 });
