@@ -42,6 +42,18 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
+    const cancelButton = document.getElementById("cancelButton");
+
+    // Función para manejar el botón de cancelar
+    if (cancelButton) {
+        cancelButton.addEventListener("click", () => {
+            const confirmation = confirm("¿Estás seguro de que deseas cancelar?");
+            if (confirmation) {
+                window.location.href = "../html/login.html"; // Redirige a la página principal
+            }
+        });
+    }
+
     // Manejar el inicio de sesión
     const loginForm = document.getElementById("loginForm");
     if (loginForm) {
