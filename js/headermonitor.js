@@ -19,16 +19,16 @@ document.addEventListener("DOMContentLoaded", () => {
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
-                            <a class="nav-link " href="#">Becas</a>
+                            <a class="nav-link" href="../html/index_monitor.html">Becas</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Menú del día</a>
+                            <a class="nav-link" href="../html/menumonitor.html">Menú del día</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Reservas</a>
+                            <a class="nav-link" href="../html/reservas.html">Reservas</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Externos</a>
+                            <a class="nav-link" href="../html/externos.html">Externos</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="../html/ajustesmonitor.html">Ajustes</a>
