@@ -19,19 +19,19 @@ document.addEventListener("DOMContentLoaded", () => {
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Gestión usuarios</a>
+                            <a class="nav-link" href="../html/index_admin.html">Gestión usuarios</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Informes</a>
+                            <a class="nav-link" href="../html/informes.html">Informes</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Menú del día</a>
+                            <a class="nav-link" href="../html/menuadmin.html">Menú del día</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Reservas</a>
+                            <a class="nav-link" href="../html/reservasadmin.html">Reservas</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Externos</a>
+                            <a class="nav-link" href="../html/externosadmin.html">Externos</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="../html/ajustesadmin.html">Ajustes</a>
