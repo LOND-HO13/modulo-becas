@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Simple</title>
+    <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="../css/footer.css">
+</head>
+
+<body>
+    <div class="content">
+        <div class="login-container">
+            <h1>BUclick</h1>
+            <form id="loginForm">
+                <div class="input-group">
+                    <label for="username"><i class="fa fa-user"></i> Usuario</label>
+                    <input type="text" id="username" placeholder="Ingresa tu usuario" required>
+                </div>
+                <div class="input-group">
+                    <label for="password"><i class="fa fa-lock"></i> Contraseña</label>
+                    <input type="password" id="password" placeholder="Ingresa tu contraseña" required>
+                </div>
+                <button type="submit" id="loginButton">Iniciar sesión</button>
+                <p><a href="../html/cambiar_contraseña.html">¿Olvidaste tu contraseña?</a></p>
+            </form>
+        </div>
+    </div>
+    <div id="footer-container"></div>
+
+    <script src="../js/footer.js"></script>
+    <script src="../js/login.js"></script>
+</body>
+</html>
