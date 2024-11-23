@@ -2,9 +2,91 @@
 <html lang="es">
 
 <head>
+    <style>
+        /* Contenedor principal */
+        .menu-container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            background-color: #fff;
+        }
+
+        /* Títulos */
+        .menu-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #990000;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .menu-note {
+            font-size: 14px;
+            color: #6c757d;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        /* Tabs */
+        .tabs-container {
+            display: flex;
+            justify-content: center;
+            border-bottom: 1px solid #ddd;
+            margin-bottom: 20px;
+        }
+
+        .tab {
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 14px;
+            color: #fff;
+            background-color: #990000;
+            border: 1px solid #990000;
+            border-radius: 5px 5px 0 0;
+        }
+
+        .tab.active {
+            background-color: #fff;
+            color: #990000;
+            border-bottom: 1px solid #fff;
+        }
+
+        /* Botones */
+        .btn-submit {
+            background-color: #990000;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 14px;
+            border-radius: 5px;
+        }
+
+        .btn-submit:hover {
+            background-color: #cc0000;
+        }
+
+        .btn-cancel {
+            background-color: #6c757d;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 14px;
+            border-radius: 5px;
+        }
+
+        .btn-cancel:hover {
+            background-color: #5a6268;
+        }
+
+        .form-control {
+            font-size: 14px;
+        }
+    </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BUclick</title>
+    <title>Menú del Día</title>
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
@@ -17,13 +99,120 @@
     <!-- Contenedor del header -->
     <div id="header-container"></div>
 
+    <!-- Contenedor principal -->
+    <div class="menu-container">
+        <!-- Tabs -->
+        <div class="tabs-container">
+            <div class="tab active" id="almuerzo-tab">Almuerzo</div>
+            <div class="tab" id="refrigerio-tab">Refrigerio</div>
+        </div>
 
+        <!-- Contenido dinámico -->
+        <div id="menu-content">
+            <!-- Contenido de almuerzo -->
+            <h1 class="menu-title">Almuerzo del día</h1>
+            <p class="menu-note">La beca de alimentación finaliza el 09/12/2024<br>Diligencie los datos para el almuerzo del día 00/00/00</p>
+            <form>
+                <div class="mb-3">
+                    <label for="plato-principal" class="form-label">Plato principal *</label>
+                    <input type="text" id="plato-principal" class="form-control" placeholder="Plato principal" required />
+                </div>
+                <div class="mb-3">
+                    <label for="bebida" class="form-label">Bebida *</label>
+                    <input type="text" id="bebida" class="form-control" placeholder="Bebida" required />
+                </div>
+                <div class="mb-3">
+                    <label for="postre" class="form-label">Postre *</label>
+                    <input type="text" id="postre" class="form-control" placeholder="Postre" required />
+                </div>
+                <div class="mb-3">
+                    <label for="costo" class="form-label">Costo *</label>
+                    <input type="number" id="costo" class="form-control" placeholder="Costo" required />
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="btn-submit">Guardar</button>
+                    <button type="reset" class="btn-cancel">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
 
     <!-- Footer -->
     <div id="footer-container"></div>
 
     <script src="../js/footer.js"></script>
     <script src="../js/headeradmin.js"></script>
+    <script>
+        // Contenido para almuerzo y refrigerio
+        const almuerzoContent = `
+            <h1 class="menu-title">Almuerzo del día</h1>
+            <p class="menu-note">La beca de alimentación finaliza el 09/12/2024<br>Diligencie los datos para el almuerzo del día 00/00/00</p>
+            <form>
+                <div class="mb-3">
+                    <label for="plato-principal" class="form-label">Plato principal *</label>
+                    <input type="text" id="plato-principal" class="form-control" placeholder="Plato principal" required />
+                </div>
+                <div class="mb-3">
+                    <label for="bebida" class="form-label">Bebida *</label>
+                    <input type="text" id="bebida" class="form-control" placeholder="Bebida" required />
+                </div>
+                <div class="mb-3">
+                    <label for="postre" class="form-label">Postre *</label>
+                    <input type="text" id="postre" class="form-control" placeholder="Postre" required />
+                </div>
+                <div class="mb-3">
+                    <label for="costo" class="form-label">Costo *</label>
+                    <input type="number" id="costo" class="form-control" placeholder="Costo" required />
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="btn-submit">Guardar</button>
+                    <button type="reset" class="btn-cancel">Cancelar</button>
+                </div>
+            </form>
+        `;
+
+        const refrigerioContent = `
+            <h1 class="menu-title">Refrigerio del día</h1>
+            <p class="menu-note">La beca de alimentación finaliza el 09/12/2024<br>Diligencie los datos para el refrigerio del día 00/00/00</p>
+            <form>
+                <div class="mb-3">
+                    <label for="aperitivo" class="form-label">Aperitivo *</label>
+                    <input type="text" id="aperitivo" class="form-control" placeholder="Aperitivo" required />
+                </div>
+                <div class="mb-3">
+                    <label for="bebida" class="form-label">Bebida *</label>
+                    <input type="text" id="bebida" class="form-control" placeholder="Bebida" required />
+                </div>
+                <div class="mb-3">
+                    <label for="costo" class="form-label">Costo *</label>
+                    <input type="number" id="costo" class="form-control" placeholder="Costo" required />
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="btn-submit">Guardar</button>
+                    <button type="reset" class="btn-cancel">Cancelar</button>
+                </div>
+            </form>
+        `;
+
+        // Lógica para cambiar entre pestañas
+        document.addEventListener("DOMContentLoaded", () => {
+            const almuerzoTab = document.getElementById("almuerzo-tab");
+            const refrigerioTab = document.getElementById("refrigerio-tab");
+            const menuContent = document.getElementById("menu-content");
+
+            almuerzoTab.addEventListener("click", () => {
+                menuContent.innerHTML = almuerzoContent;
+                almuerzoTab.classList.add("active");
+                refrigerioTab.classList.remove("active");
+            });
+
+            refrigerioTab.addEventListener("click", () => {
+                menuContent.innerHTML = refrigerioContent;
+                refrigerioTab.classList.add("active");
+                almuerzoTab.classList.remove("active");
+            });
+        });
+    </script>
 </body>
 
 </html>

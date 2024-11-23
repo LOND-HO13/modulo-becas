@@ -2,9 +2,80 @@
 <html lang="es">
 
 <head>
+    <style>
+        /* Contenedor principal */
+        .form-container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            background-color: #fff;
+        }
+
+        /* Título */
+        .form-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #990000;
+            text-align: center;
+        }
+
+        /* Subtítulo */
+        .form-subtitle {
+            font-size: 14px;
+            color: #6c757d;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        /* Información */
+        .info-box {
+            font-size: 14px;
+            color: #6c757d;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        /* Botones */
+        .btn-submit {
+            background-color: #990000;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 14px;
+            border-radius: 5px;
+        }
+
+        .btn-submit:hover {
+            background-color: #cc0000;
+        }
+
+        .btn-cancel {
+            background-color: #6c757d;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 14px;
+            border-radius: 5px;
+        }
+
+        .btn-cancel:hover {
+            background-color: #5a6268;
+        }
+
+        .form-control {
+            font-size: 14px;
+        }
+
+        .note {
+            font-size: 12px;
+            color: #6c757d;
+        }
+    </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BUclick</title>
+    <title>Reserva para Externos</title>
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
@@ -17,7 +88,67 @@
     <!-- Contenedor del header -->
     <div id="header-container"></div>
 
+    <!-- Contenedor del formulario -->
+    <div class="form-container">
+        <h1 class="form-title">Reserva para externos</h1>
+        <p class="form-subtitle">Aquí se podrán registrar las reservas para usuarios externos</p>
 
+        <!-- Información general -->
+        <div class="info-box">
+            <p>Reserva almuerzo entre <strong>00:00 y 00:00</strong></p>
+            <p>Reserva refrigerio entre <strong>00:00 y 00:00</strong></p>
+            <p><strong>Reservas disponibles:</strong> 10</p>
+        </div>
+
+        <!-- Formulario -->
+        <form>
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <label for="cedula" class="form-label">Cédula *</label>
+                    <input type="text" id="cedula" class="form-control" placeholder="Cédula de usuario" required />
+                </div>
+                <div class="col-md-6">
+                    <label for="nombre" class="form-label">Nombre *</label>
+                    <div class="input-group">
+                        <input type="text" id="nombre" class="form-control" placeholder="Nombre del usuario" required />
+                        <button class="btn btn-light" type="button"><i class="fas fa-search"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <label for="apellido" class="form-label">Apellido *</label>
+                    <input type="text" id="apellido" class="form-control" placeholder="Apellido del usuario" required />
+                </div>
+                <div class="col-md-6">
+                    <label for="area-dependencia" class="form-label">Área dependencia *</label>
+                    <input type="text" id="area-dependencia" class="form-control" placeholder="Área dependencia" required />
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <label for="correo" class="form-label">Correo *</label>
+                    <input type="email" id="correo" class="form-control" placeholder="Correo del usuario" required />
+                </div>
+                <div class="col-md-6">
+                    <label for="tipo-beca" class="form-label">Tipo de beca *</label>
+                    <select id="tipo-beca" class="form-select" required>
+                        <option value="" disabled selected>Seleccione</option>
+                        <option value="almuerzo">Almuerzo</option>
+                        <option value="refrigerio">Refrigerio</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Botones -->
+            <div class="text-center">
+                <button type="submit" class="btn-submit">Reservar</button>
+                <button type="reset" class="btn-cancel">Cancelar</button>
+            </div>
+        </form>
+    </div>
 
     <!-- Footer -->
     <div id="footer-container"></div>
