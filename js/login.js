@@ -1,9 +1,10 @@
-document.addEventListener("DOMContentLoaded", () => {
-    // Inicializar usuarios en localStorage si no existen
+document.addEventListener("DOMContentLoaded", () => { 
+    // Inicializar usuarios con roles en localStorage si no existen
     if (!localStorage.getItem("users")) {
         const initialUsers = [
-            { username: "admin", password: "admin" },
-            { username: "user1", password: "12345" }
+            { username: "admin", password: "admin", role: "admin" },
+            { username: "user1", password: "12345", role: "student" },
+            { username: "monitor1", password: "monitor123", role: "monitor" }
         ];
         localStorage.setItem("users", JSON.stringify(initialUsers));
     }
@@ -56,6 +57,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
             if (user) {
                 alert("Inicio de sesión exitoso. Bienvenido " + username + "!");
+                console.log("Usuario encontrado:", user);
+
+                // Redirigir según el rol del usuario
+                console.log("Rol detectado:", user.role);
+                switch (user.role) {
+                    case "admin":
+                        window.location.href = "index_admin.html";
+                        break;
+                    case "student":
+                        window.location.href = "index_estudiante.html";
+                        break;
+                    case "monitor":
+                        window.location.href = "index_monitor.html";
+                        break;
+                    default:
+                        alert(`Rol no reconocido: ${user.role}. Contacta al administrador.`);
+                }
             } else {
                 alert("Usuario o contraseña incorrectos. Inténtalo de nuevo.");
             }
