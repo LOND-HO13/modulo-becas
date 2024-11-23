@@ -19,10 +19,10 @@ document.addEventListener("DOMContentLoaded", () => {
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
-                            <a class="nav-link active" href="#">Becas</a>
+                            <a class="nav-link" href="../html/index_estudiante.html">Becas</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Ajustes</a>
+                            <a class="nav-link" href="../html/ajustes.html">Ajustes</a>
                         </li>
                     </ul>
                     <!-- Botón de cerrar sesión -->

@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
-                            <a class="nav-link active" href="#">Gestión usuarios</a>
+                            <a class="nav-link" href="#">Gestión usuarios</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Informes</a>
@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
                             <a class="nav-link" href="#">Externos</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Ajustes</a>
+                            <a class="nav-link" href="../html/ajustesadmin.html">Ajustes</a>
                         </li>
                     </ul>
                     <!-- Botón de cerrar sesión -->
